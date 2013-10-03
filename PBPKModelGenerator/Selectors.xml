@@ -3,6 +3,7 @@
     <record vendor_key="VLCGKineticsImpl" selector="generateModelOperationKineticsBufferWithOptions:"/>
     <record vendor_key="VLCGKineticsHeader" selector="generateModelOperationKineticsHeaderBufferWithOptions:"/>
     
-    <record vendor_key="VLCGMassBalancesImpl" selector="generateModelOperationMassBalancesImplBufferWithOptions:"/>
-    <record vendor_key="VLCGMassBalancesHeader" selector="generateModelOperationMassBalancesHeaderBufferWithOptions:"/>
+    <record vendor_key="VLCGMassBalancesImpl" selector="generateModelMassBalancesImplBufferWithOptions:"/>
+    <record vendor_key="VLCGMassBalancesHeader" selector="generateModelMassBalancesHeaderBufferWithOptions:"/>
+    <record vendor_key="VLCGModelDriver" selector="generateModelDriverImplBufferWithOptions:"/>
 </VendorSelectorMap>
