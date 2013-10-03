@@ -1,0 +1,4 @@
+<?xml version="1.0" standalone="yes"?>
+<Outputs>
+    <output index="0" label="GSL (c-code)" language_adaptor="VLGSLLanguageAdaptor"/>
+</Outputs>

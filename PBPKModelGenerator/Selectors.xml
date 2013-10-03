@@ -1,0 +1,5 @@
+<?xml version="1.0" standalone="yes"?>
+<VendorSelectorMap>
+    <record vendor_key="VLCGKineticsImpl" selector="generateModelOperationKineticsBufferWithOptions:"/>
+    <record vendor_key="VLCGKineticsHeader" selector="generateModelOperationKineticsHeaderBufferWithOptions:"/>
+</VendorSelectorMap>
