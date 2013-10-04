@@ -6,4 +6,6 @@
     <record vendor_key="VLCGMassBalancesImpl" selector="generateModelMassBalancesImplBufferWithOptions:"/>
     <record vendor_key="VLCGMassBalancesHeader" selector="generateModelMassBalancesHeaderBufferWithOptions:"/>
     <record vendor_key="VLCGModelDriver" selector="generateModelDriverImplBufferWithOptions:"/>
+    
+    <record vendor_key="VLCGModelMakeFile" selector="generateModelMakeFileBufferWithOptions:"/>
 </VendorSelectorMap>
