@@ -1,0 +1,142 @@
+<?xml version="1.0" standalone="yes"?>
+<CirculatoryModel>
+    
+    <organ_model symbol="lung">
+        <listOfInputs>
+            <connection symbol="venous_blood_pool"/>
+        </listOfInputs>
+    
+        <listOfOutputs>
+            <connection symbol="arterial_blood_pool"/>
+        </listOfOutputs>
+    </organ_model>
+    
+	<organ_model symbol="testes">
+        <listOfInputs>
+            <connection symbol="arterial_blood_pool"/>
+        </listOfInputs>
+        
+        <listOfOutputs>
+            <connection symbol="venous_blood_pool"/>
+        </listOfOutputs>
+    </organ_model>
+
+    <organ_model symbol="heart">
+        <listOfInputs>
+            <connection symbol="arterial_blood_pool"/>
+        </listOfInputs>
+        
+        <listOfOutputs>
+            <connection symbol="venous_blood_pool"/>
+        </listOfOutputs>
+    </organ_model>
+
+	<organ_model symbol="brain">
+        <listOfInputs>
+            <connection symbol="arterial_blood_pool"/>
+        </listOfInputs>
+        
+        <listOfOutputs>
+            <connection symbol="venous_blood_pool"/>
+        </listOfOutputs>
+    </organ_model>
+	
+	<organ_model symbol="fat">
+        <listOfInputs>
+            <connection symbol="arterial_blood_pool"/>
+        </listOfInputs>
+        
+        <listOfOutputs>
+            <connection symbol="venous_blood_pool"/>
+        </listOfOutputs>
+    </organ_model>
+	
+	<organ_model symbol="bone">
+        <listOfInputs>
+            <connection symbol="arterial_blood_pool"/>
+        </listOfInputs>
+        
+        <listOfOutputs>
+            <connection symbol="venous_blood_pool"/>
+        </listOfOutputs>
+    </organ_model>
+
+	<organ_model symbol="skin">
+        <listOfInputs>
+            <connection symbol="arterial_blood_pool"/>
+        </listOfInputs>
+        
+        <listOfOutputs>
+            <connection symbol="venous_blood_pool"/>
+        </listOfOutputs>
+    </organ_model>
+	
+	<organ_model symbol="muscle">
+        <listOfInputs>
+            <connection symbol="arterial_blood_pool"/>
+        </listOfInputs>
+        
+        <listOfOutputs>
+            <connection symbol="venous_blood_pool"/>
+        </listOfOutputs>
+    </organ_model>
+	
+	<organ_model symbol="kidney">
+        <listOfInputs>
+            <connection symbol="arterial_blood_pool"/>
+        </listOfInputs>
+        
+        <listOfOutputs>
+            <connection symbol="venous_blood_pool"/>
+			<connection symbol="urine"/>
+        </listOfOutputs>
+    </organ_model>
+	
+	<organ_model symbol="liver">
+        <listOfInputs>
+            <connection symbol="arterial_blood_pool"/>
+        </listOfInputs>
+        
+        <listOfOutputs>
+            <connection symbol="venous_blood_pool"/>
+			<connection symbol="bile"/>
+        </listOfOutputs>
+    </organ_model>
+
+	<organ_model symbol="arterial_blood_pool">
+        <listOfInputs>
+            <connection symbol="lung"/>
+        </listOfInputs>
+        
+        <listOfOutputs>
+            <connection symbol="muscle"/>
+			<connection symbol="skin"/>
+			<connection symbol="bone"/>
+			<connection symbol="fat"/>
+			<connection symbol="brain"/>
+			<connection symbol="heart"/>
+			<connection symbol="testes"/>
+			<connection symbol="kidney"/>
+			<connection symbol="liver"/>
+        </listOfOutputs>
+    </organ_model>
+
+	<organ_model symbol="venous_blood_pool">
+        <listOfInputs>
+			<connection symbol="muscle"/>
+			<connection symbol="skin"/>
+			<connection symbol="bone"/>
+			<connection symbol="fat"/>
+			<connection symbol="brain"/>
+			<connection symbol="heart"/>
+			<connection symbol="testes"/>
+			<connection symbol="kidney"/>
+			<connection symbol="liver"/>
+        </listOfInputs>
+        
+        <listOfOutputs>
+            <connection symbol="lung"/>
+        </listOfOutputs>
+    </organ_model>
+
+</CirculatoryModel>

@@ -22,6 +22,7 @@
 		AD09FC5617FCDD7A00A4E49F /* Outputs.xml in Resources */ = {isa = PBXBuildFile; fileRef = AD09FC5517FCDD7A00A4E49F /* Outputs.xml */; };
 		AD543CAC17FD85490084CF8A /* libVLCodeGeneratorLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD543CAB17FD85490084CF8A /* libVLCodeGeneratorLibrary.a */; };
 		AD543CB717FDD7AC0084CF8A /* Selectors.xml in Resources */ = {isa = PBXBuildFile; fileRef = AD543CB617FDD7AC0084CF8A /* Selectors.xml */; };
+		AD543CBC17FF4FBB0084CF8A /* Circulation.xml in Resources */ = {isa = PBXBuildFile; fileRef = AD543CBB17FF4FBB0084CF8A /* Circulation.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		AD543CAB17FD85490084CF8A /* libVLCodeGeneratorLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVLCodeGeneratorLibrary.a; path = "../builds/VLCodeGeneratorLibrary-futuxgqfnrodevghvsqzacdcekch/Build/Products/Debug/libVLCodeGeneratorLibrary.a"; sourceTree = "<group>"; };
 		AD543CB617FDD7AC0084CF8A /* Selectors.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Selectors.xml; sourceTree = "<group>"; };
 		AD543CB817FDDFBD0084CF8A /* VLGSLLanguageAdaptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VLGSLLanguageAdaptor.h; path = "../../builds/VLCodeGeneratorLibrary-futuxgqfnrodevghvsqzacdcekch/Build/Products/Debug/include/VLCodeGeneratorLibrary/VLGSLLanguageAdaptor.h"; sourceTree = "<group>"; };
+		AD543CBB17FF4FBB0084CF8A /* Circulation.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Circulation.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 			children = (
 				AD543CB617FDD7AC0084CF8A /* Selectors.xml */,
 				AD09FC5517FCDD7A00A4E49F /* Outputs.xml */,
+				AD543CBB17FF4FBB0084CF8A /* Circulation.xml */,
 			);
 			name = default_config;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				AD09FC2617FCDC7200A4E49F /* InfoPlist.strings in Resources */,
 				AD09FC5317FCDC8E00A4E49F /* VLDocument.xib in Resources */,
 				AD543CB717FDD7AC0084CF8A /* Selectors.xml in Resources */,
+				AD543CBC17FF4FBB0084CF8A /* Circulation.xml in Resources */,
 				AD09FC5617FCDD7A00A4E49F /* Outputs.xml in Resources */,
 				AD09FC3717FCDC7200A4E49F /* Images.xcassets in Resources */,
 				AD09FC2C17FCDC7200A4E49F /* Credits.rtf in Resources */,
