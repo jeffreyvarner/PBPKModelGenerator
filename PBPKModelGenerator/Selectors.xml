@@ -8,4 +8,5 @@
     <record vendor_key="VLCGModelDriver" selector="generateModelDriverImplBufferWithOptions:"/>
     
     <record vendor_key="VLCGModelMakeFile" selector="generateModelMakeFileBufferWithOptions:"/>
+    <record vendor_key="VLCGModelCirculationMatrixFile" selector="generateModelCirculationMatrixBufferWithOptions:"/>
 </VendorSelectorMap>
