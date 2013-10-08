@@ -9,4 +9,6 @@
     
     <record vendor_key="VLCGModelMakeFile" selector="generateModelMakeFileBufferWithOptions:"/>
     <record vendor_key="VLCGModelCirculationMatrixFile" selector="generateModelCirculationMatrixBufferWithOptions:"/>
+    <record vendor_key="VLCGModelInitialConditionsFile" selector="generateModelInitialConditonsBufferWithOptions:"/>
+    <record vendor_key="VLCGModelParametersFile" selector="generateModelParametersBufferWithOptions:"/>
 </VendorSelectorMap>
