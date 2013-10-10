@@ -2,13 +2,12 @@
 <VendorSelectorMap>
     <record vendor_key="VLCGKineticsImpl" selector="generateModelOperationKineticsBufferWithOptions:"/>
     <record vendor_key="VLCGKineticsHeader" selector="generateModelOperationKineticsHeaderBufferWithOptions:"/>
-    
     <record vendor_key="VLCGMassBalancesImpl" selector="generateModelMassBalancesImplBufferWithOptions:"/>
     <record vendor_key="VLCGMassBalancesHeader" selector="generateModelMassBalancesHeaderBufferWithOptions:"/>
     <record vendor_key="VLCGModelDriver" selector="generateModelDriverImplBufferWithOptions:"/>
-    
     <record vendor_key="VLCGModelMakeFile" selector="generateModelMakeFileBufferWithOptions:"/>
     <record vendor_key="VLCGModelCirculationMatrixFile" selector="generateModelCirculationMatrixBufferWithOptions:"/>
+    <record vendor_key="VLCGModelStoichiometricMatrixFile" selector="generateModelStoichiometricMatrixBufferWithOptions:"/>
     <record vendor_key="VLCGModelInitialConditionsFile" selector="generateModelInitialConditonsBufferWithOptions:"/>
     <record vendor_key="VLCGModelParametersFile" selector="generateModelParametersBufferWithOptions:"/>
 </VendorSelectorMap>
