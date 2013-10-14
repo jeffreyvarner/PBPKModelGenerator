@@ -14,6 +14,7 @@
 @property (strong) IBOutlet NSButton *myGenerateCodeButton;
 @property (strong) IBOutlet NSButton *myCancelButton;
 @property (strong) IBOutlet NSButton *myOpenModelFileButton;
+@property (strong) IBOutlet NSButton *myClearConsoleButton;
 @property (strong) IBOutlet NSButton *myOverwriteModelFilesCheckBox;
 @property (strong) IBOutlet NSComboBox *myModelOutputTypeComboBox;
 @property (strong) IBOutlet NSTextView *myConsoleTextField;
@@ -121,6 +122,12 @@
 }
 
 #pragma mark - actions
+-(IBAction)codeGenerationClearConsoleButtonWasTapped:(NSButton *)button
+{
+    // clear the console text -
+    [[self myConsoleTextField] setString:@""];
+}
+
 -(IBAction)codeGenerationBeginGenerationButtonWasTapped:(NSButton *)button
 {
     // ok, so check to make sure we have a URL - if we do then begin the generation

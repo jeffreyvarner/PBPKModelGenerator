@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="VLDocument">
             <connections>
                 <outlet property="myCancelButton" destination="X8s-1b-2Z6" id="zTf-6L-Aey"/>
+                <outlet property="myClearConsoleButton" destination="6gy-Zn-IyL" id="xak-1m-mbo"/>
                 <outlet property="myCodeGenerationProgressIndicator" destination="K6v-S1-LT2" id="U9h-s5-AHi"/>
                 <outlet property="myConsoleTextField" destination="cTI-Lc-tOf" id="iGF-Dv-tPR"/>
                 <outlet property="myGenerateCodeButton" destination="Mop-U8-ozf" id="rQz-dc-eci"/>
@@ -74,10 +75,10 @@
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X8s-1b-2Z6">
-                        <rect key="frame" x="423" y="13" width="92" height="32"/>
+                        <rect key="frame" x="345" y="13" width="92" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="8Fy-xF-mDQ"/>
+                            <constraint firstAttribute="width" constant="80" id="k4e-es-igP"/>
                         </constraints>
                         <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fQ5-5A-S5L">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -88,6 +89,23 @@ Gw
                         </buttonCell>
                         <connections>
                             <action selector="codeGenerationCancelGenerationButtonWasTapped:" target="-2" id="SRZ-cD-JQ4"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6gy-Zn-IyL">
+                        <rect key="frame" x="431" y="13" width="92" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="8YO-Lq-uJQ"/>
+                        </constraints>
+                        <buttonCell key="cell" type="push" title="Clear" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZMC-qd-mM7">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="codeGenerationClearConsoleButtonWasTapped:" target="-2" id="OlA-AN-mD6"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2MI-2H-dnO">
@@ -161,6 +179,7 @@ Gw
                 </subviews>
                 <constraints>
                     <constraint firstItem="K6v-S1-LT2" firstAttribute="trailing" secondItem="RcK-o3-1cL" secondAttribute="trailing" id="0ak-lu-jnR"/>
+                    <constraint firstItem="X8s-1b-2Z6" firstAttribute="baseline" secondItem="Mop-U8-ozf" secondAttribute="baseline" id="3tW-nn-mwM"/>
                     <constraint firstItem="dFi-60-cE9" firstAttribute="leading" secondItem="kSI-Ga-1lw" secondAttribute="leading" id="41L-pJ-4ul"/>
                     <constraint firstItem="l2u-ri-3zh" firstAttribute="top" secondItem="qZY-pd-agg" secondAttribute="bottom" constant="14" id="6tg-QS-cwN"/>
                     <constraint firstItem="DbU-0f-b0S" firstAttribute="leading" secondItem="dFi-60-cE9" secondAttribute="trailing" constant="8" symbolic="YES" id="Cwm-Fj-Hgg"/>
@@ -173,20 +192,22 @@ Gw
                     <constraint firstItem="2MI-2H-dnO" firstAttribute="leading" secondItem="DbU-0f-b0S" secondAttribute="trailing" constant="8" symbolic="YES" id="Nad-gv-Y1x"/>
                     <constraint firstItem="qZY-pd-agg" firstAttribute="leading" secondItem="kSI-Ga-1lw" secondAttribute="trailing" constant="8" symbolic="YES" id="SQQ-g4-uGm"/>
                     <constraint firstItem="RcK-o3-1cL" firstAttribute="top" secondItem="K6v-S1-LT2" secondAttribute="bottom" constant="8" symbolic="YES" id="Sjm-vh-DTd"/>
+                    <constraint firstItem="X8s-1b-2Z6" firstAttribute="baseline" secondItem="6gy-Zn-IyL" secondAttribute="baseline" id="UcB-tV-8N0"/>
                     <constraint firstItem="l2u-ri-3zh" firstAttribute="leading" secondItem="kSI-Ga-1lw" secondAttribute="leading" id="UlF-Uc-7MB"/>
                     <constraint firstItem="kSI-Ga-1lw" firstAttribute="top" secondItem="dFi-60-cE9" secondAttribute="bottom" constant="8" symbolic="YES" id="Uld-Nu-SmY"/>
                     <constraint firstItem="DbU-0f-b0S" firstAttribute="top" secondItem="2MI-2H-dnO" secondAttribute="top" id="VPR-8l-qT2"/>
+                    <constraint firstItem="X8s-1b-2Z6" firstAttribute="top" secondItem="RcK-o3-1cL" secondAttribute="bottom" constant="8" id="X1M-rR-FfL"/>
                     <constraint firstAttribute="trailing" secondItem="qZY-pd-agg" secondAttribute="trailing" constant="69" id="Xga-RW-UV8"/>
-                    <constraint firstItem="X8s-1b-2Z6" firstAttribute="top" secondItem="RcK-o3-1cL" secondAttribute="bottom" constant="8" id="cwu-AB-hpg"/>
-                    <constraint firstItem="X8s-1b-2Z6" firstAttribute="baseline" secondItem="Mop-U8-ozf" secondAttribute="baseline" id="dbI-Sx-aZj"/>
-                    <constraint firstAttribute="bottom" secondItem="X8s-1b-2Z6" secondAttribute="bottom" constant="20" symbolic="YES" id="flp-1K-dhC"/>
+                    <constraint firstItem="Mop-U8-ozf" firstAttribute="leading" secondItem="6gy-Zn-IyL" secondAttribute="trailing" constant="4" id="d9z-NT-Alj"/>
+                    <constraint firstAttribute="bottom" secondItem="X8s-1b-2Z6" secondAttribute="bottom" constant="20" symbolic="YES" id="dVq-9J-lGz"/>
+                    <constraint firstAttribute="trailing" secondItem="X8s-1b-2Z6" secondAttribute="trailing" constant="241" id="gm4-cg-HhO"/>
                     <constraint firstItem="RcK-o3-1cL" firstAttribute="leading" secondItem="K6v-S1-LT2" secondAttribute="leading" id="hYy-c6-AFo"/>
                     <constraint firstItem="DbU-0f-b0S" firstAttribute="trailing" secondItem="qZY-pd-agg" secondAttribute="trailing" id="ljF-5Y-ecr"/>
                     <constraint firstItem="qZY-pd-agg" firstAttribute="top" secondItem="DbU-0f-b0S" secondAttribute="bottom" constant="8" symbolic="YES" id="nLN-Rf-qUE"/>
                     <constraint firstItem="K6v-S1-LT2" firstAttribute="top" secondItem="2MI-2H-dnO" secondAttribute="bottom" constant="63" id="pCP-SN-3tY"/>
                     <constraint firstItem="K6v-S1-LT2" firstAttribute="trailing" secondItem="2MI-2H-dnO" secondAttribute="trailing" id="rOW-iO-gb5"/>
+                    <constraint firstItem="X8s-1b-2Z6" firstAttribute="trailing" secondItem="l2u-ri-3zh" secondAttribute="trailing" id="vCu-hP-hdL"/>
                     <constraint firstItem="qZY-pd-agg" firstAttribute="leading" secondItem="DbU-0f-b0S" secondAttribute="leading" id="wwh-fT-9oc"/>
-                    <constraint firstItem="Mop-U8-ozf" firstAttribute="leading" secondItem="X8s-1b-2Z6" secondAttribute="trailing" constant="12" symbolic="YES" id="yuA-9Q-lKl"/>
                     <constraint firstItem="qZY-pd-agg" firstAttribute="top" secondItem="kSI-Ga-1lw" secondAttribute="top" id="z7j-tg-YAs"/>
                     <constraint firstItem="dFi-60-cE9" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="17" id="zHs-Bi-S2w"/>
                 </constraints>

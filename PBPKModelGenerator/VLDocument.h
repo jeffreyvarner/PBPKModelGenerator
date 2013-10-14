@@ -17,6 +17,7 @@
     NSButton *_myGenerateCodeButton;
     NSButton *_myCancelButton;
     NSButton *_myOpenModelFileButton;
+    NSButton *_myClearConsoleButton;
     NSButton *_myOverwriteModelFilesCheckBox;
     NSComboBox *_myModelOutputTypeComboBox;
     NSTextView *_myConsoleTextField;
@@ -35,5 +36,6 @@
 -(IBAction)codeGenerationBeginGenerationButtonWasTapped:(NSButton *)button;
 -(IBAction)codeGenerationCancelGenerationButtonWasTapped:(NSButton *)button;
 -(IBAction)codeGenerationLoadTransformationBlueprintButtonWasTapped:(NSButton *)button;
+-(IBAction)codeGenerationClearConsoleButtonWasTapped:(NSButton *)button;
 
 @end
