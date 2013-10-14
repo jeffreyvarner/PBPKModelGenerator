@@ -16,4 +16,6 @@
     <record vendor_key="VLCGModelCompartmentVolumeFile" selector="generateModelCompartmentVolumeBufferWithOptions:"/>
     <record vendor_key="VLCGModelParametersFile" selector="generateModelParametersBufferWithOptions:"/>
     
+    <record vendor_key="VLCGModelDebugInformation" selector="generateModelDebugBufferWithOptions:"/>
+    
 </VendorSelectorMap>
