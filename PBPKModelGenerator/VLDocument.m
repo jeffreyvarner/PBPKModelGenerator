@@ -16,7 +16,7 @@
 @property (strong) IBOutlet NSButton *myOpenModelFileButton;
 @property (strong) IBOutlet NSButton *myOverwriteModelFilesCheckBox;
 @property (strong) IBOutlet NSComboBox *myModelOutputTypeComboBox;
-@property (strong) IBOutlet NSTextField *myConsoleTextField;
+@property (strong) IBOutlet NSTextView *myConsoleTextField;
 @property (strong) IBOutlet NSTextField *myModelSpecificationPathTextField;
 @property (strong) IBOutlet NSProgressIndicator *myCodeGenerationProgressIndicator;
 @property (strong) NSWindowController *myWindowController;
@@ -80,9 +80,9 @@
                         NSString *message = [notification object];
                         
                         // update the label -
-                        NSString *current_text = [[self myConsoleTextField] stringValue];
+                        NSString *current_text = [[[self myConsoleTextField] textStorage] string];
                         NSString *new_text = [NSString stringWithFormat:@"%@\n%@",current_text,message];
-                        [[self myConsoleTextField] setStringValue:new_text];
+                        [[self myConsoleTextField] setString:new_text];
                     }];
     
     // VLTransformationJobCompletedNotification -
@@ -98,35 +98,26 @@
                         CFTimeInterval _myExecutionDuration = CFAbsoluteTimeGetCurrent() - _myExecutionStartTime;
                         
                         // Set the completed text -
-                        NSString *current_text = [[self myConsoleTextField] stringValue];
+                        NSString *current_text = [[[self myConsoleTextField] textStorage] string];
                         NSString *new_text = [NSString stringWithFormat:@"%@\n%@ in %f seconds",current_text,@"Status: Transformation completed ",_myExecutionDuration];
-                        [[self myConsoleTextField] setStringValue:new_text];
+                        [[self myConsoleTextField] setString:new_text];
                     }];
 
 }
 
 + (BOOL)autosavesInPlace
 {
-    return YES;
+    return NO;
 }
 
 - (NSData *)dataOfType:(NSString *)typeName error:(NSError **)outError
 {
-    // Insert code here to write your document to data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning nil.
-    // You can also choose to override -fileWrapperOfType:error:, -writeToURL:ofType:error:, or -writeToURL:ofType:forSaveOperation:originalContentsURL:error: instead.
-    NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
-    @throw exception;
     return nil;
 }
 
 - (BOOL)readFromData:(NSData *)data ofType:(NSString *)typeName error:(NSError **)outError
 {
-    // Insert code here to read your document from the given data of the specified type. If outError != NULL, ensure that you create and set an appropriate error when returning NO.
-    // You can also choose to override -readFromFileWrapper:ofType:error: or -readFromURL:ofType:error: instead.
-    // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
-    NSException *exception = [NSException exceptionWithName:@"UnimplementedMethod" reason:[NSString stringWithFormat:@"%@ is unimplemented", NSStringFromSelector(_cmd)] userInfo:nil];
-    @throw exception;
-    return YES;
+    return NO;
 }
 
 #pragma mark - actions
@@ -145,7 +136,7 @@
             [[self myCodeGenerationProgressIndicator] startAnimation:nil];
             
             // clear out the console -
-            [[self myConsoleTextField] setStringValue:@""];
+            [[self myConsoleTextField] insertText:@""];
             
             // Ok, so when I get here I have the blueprint file URL.
             // We need to start the code generation process for this blueprint file.

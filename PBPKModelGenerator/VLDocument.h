@@ -19,7 +19,7 @@
     NSButton *_myOpenModelFileButton;
     NSButton *_myOverwriteModelFilesCheckBox;
     NSComboBox *_myModelOutputTypeComboBox;
-    NSTextField *_myConsoleTextField;
+    NSTextView *_myConsoleTextField;
     NSTextField *_myModelSpecificationPathTextField;
     NSProgressIndicator *_myCodeGenerationProgressIndicator;
     NSWindowController *_myWindowController;
