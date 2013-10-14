@@ -17,5 +17,6 @@
     <record vendor_key="VLCGModelParametersFile" selector="generateModelParametersBufferWithOptions:"/>
     
     <record vendor_key="VLCGModelDebugInformation" selector="generateModelDebugBufferWithOptions:"/>
+    <record vendor_key="VLCGModelSolveModelScript" selector="generateModelSolveModelScriptBufferWithOptions:"/>
     
 </VendorSelectorMap>
