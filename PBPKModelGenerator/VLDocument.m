@@ -157,6 +157,8 @@
                 // Hand the blue print tree to the lib, and call execute.
                 void (^MyCodeGenerationJobCompletionHandler)(BOOL) = ^(BOOL didFinish){
                     
+                    [self jobDidComplete];
+                    
                 };
                 
                 // create the engine -
@@ -164,6 +166,10 @@
                 [engine setMyTransformationBlueprintTree:blueprintTree];
                 [engine setMyTransformationFilePath:[[self myBlueprintFileURL] absoluteString]];
                 [engine setMyTransformationLanguageAdaptor:[self mySelectedLanguageAdaptor]];
+                
+                // could we have code type adaptor?
+                // ...
+                
                 [engine executeCodeGenerationJobWithCompletionHandler:MyCodeGenerationJobCompletionHandler];
             }
             else
@@ -203,6 +209,11 @@
     {
         [self codeGenerationLoadTransformationBlueprintButtonWasTapped:nil];
     }
+}
+
+-(void)jobDidComplete
+{
+    NSLog(@"Done ...");
 }
 
 -(IBAction)codeGenerationCancelGenerationButtonWasTapped:(NSButton *)button
