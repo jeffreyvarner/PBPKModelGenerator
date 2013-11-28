@@ -19,7 +19,10 @@
     NSButton *_myOpenModelFileButton;
     NSButton *_myClearConsoleButton;
     NSButton *_myOverwriteModelFilesCheckBox;
+    
     NSComboBox *_myModelOutputTypeComboBox;
+    NSComboBox *_myModelLanguageTypeComboBox;
+    
     NSTextView *_myConsoleTextField;
     NSTextField *_myModelSpecificationPathTextField;
     NSProgressIndicator *_myCodeGenerationProgressIndicator;
@@ -28,7 +31,8 @@
     CFTimeInterval _myExecutionStartTime;
     
     // defaults -
-    NSArray *_myDefaultOutputTypes;
+    NSArray *_myDefaultLanguageTypes;
+    NSArray *_myDefaultTransformationTypes;
     NSString *_mySelectedLanguageAdaptor;
 }
 

@@ -1,0 +1,6 @@
+<?xml version="1.0" standalone="yes"?>
+<Languages>
+    <language index="0" label="GSL (c-code)" language_adaptor="VLGSLLanguageAdaptor"/>
+    <language index="1" label="SUNDIALS (c-code)" language_adaptor="VLSUNDIALSLanguageAdaptor"/>
+    <language index="2" label="Octave-C (c-code)" language_adaptor="VLOctaveCLanguageAdaptor"/>
+</Languages>

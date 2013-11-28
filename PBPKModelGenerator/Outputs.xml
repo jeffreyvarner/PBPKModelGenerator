@@ -1,6 +1,0 @@
-<?xml version="1.0" standalone="yes"?>
-<Outputs>
-    <output index="0" label="GSL (c-code)" language_adaptor="VLGSLLanguageAdaptor"/>
-    <output index="1" label="SUNDIALS (c-code)" language_adaptor="VLSUNDIALSLanguageAdaptor"/>
-    <output index="2" label="Octave-C (c-code)" language_adaptor="VLOctaveCLanguageAdaptor"/>
-</Outputs>

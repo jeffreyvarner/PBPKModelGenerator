@@ -17,12 +17,15 @@
 @property (strong) IBOutlet NSButton *myClearConsoleButton;
 @property (strong) IBOutlet NSButton *myOverwriteModelFilesCheckBox;
 @property (strong) IBOutlet NSComboBox *myModelOutputTypeComboBox;
+@property (strong) IBOutlet NSComboBox *myModelLanguageTypeComboBox;
+
 @property (strong) IBOutlet NSTextView *myConsoleTextField;
 @property (strong) IBOutlet NSTextField *myModelSpecificationPathTextField;
 @property (strong) IBOutlet NSProgressIndicator *myCodeGenerationProgressIndicator;
 @property (strong) NSWindowController *myWindowController;
 
-@property (strong) NSArray *myDefaultOutputTypes;
+@property (strong) NSArray *myDefaultLanguageTypes;
+@property (strong) NSArray *myDefaultTransformationTypes;
 @property (strong) NSString *mySelectedLanguageAdaptor;
 @property (strong) NSURL *myBlueprintFileURL;
 
@@ -282,7 +285,7 @@
     NSUInteger selected_language_index = [[self myModelOutputTypeComboBox] indexOfSelectedItem];
     
     // grab the node for this selection -
-    NSXMLElement *node = [[self myDefaultOutputTypes] objectAtIndex:selected_language_index];
+    NSXMLElement *node = [[self myDefaultLanguageTypes] objectAtIndex:selected_language_index];
     
     // get the language_adaptor attribute -
     NSString *language_adaptor_string = [[node attributeForName:@"language_adaptor"] stringValue];
@@ -293,24 +296,51 @@
 
 - (NSInteger)numberOfItemsInComboBox:(NSComboBox *)aComboBox
 {
-    if ([self myDefaultOutputTypes]!=nil)
+    if ([self myModelLanguageTypeComboBox] == aComboBox)
     {
-        return [[self myDefaultOutputTypes] count];
+        if ([self myDefaultLanguageTypes]!=nil)
+        {
+            return [[self myDefaultLanguageTypes] count];
+        }
     }
+    else if ([self myModelOutputTypeComboBox] == aComboBox)
+    {
+        if ([self myDefaultTransformationTypes]!=nil)
+        {
+            return [[self myDefaultTransformationTypes] count];
+        }
+    }
+    
     
     return 0;
 }
 
 - (id)comboBox:(NSComboBox *)aComboBox objectValueForItemAtIndex:(NSInteger)index
 {
-    if ([self myDefaultOutputTypes] != nil &&
-        [[self myDefaultOutputTypes] count]>index)
+    
+    if ([self myModelLanguageTypeComboBox] == aComboBox)
     {
-        // get the node, return the label attribute
-        NSXMLElement *node = [[self myDefaultOutputTypes] objectAtIndex:index];
-        NSString *display_label = [[node attributeForName:@"label"] stringValue];
-        return display_label;
+        if ([self myDefaultLanguageTypes] != nil &&
+            [[self myDefaultLanguageTypes] count]>index)
+        {
+            // get the node, return the label attribute
+            NSXMLElement *node = [[self myDefaultLanguageTypes] objectAtIndex:index];
+            NSString *display_label = [[node attributeForName:@"label"] stringValue];
+            return display_label;
+        }
     }
+    else if ([self myModelOutputTypeComboBox] == aComboBox)
+    {
+        if ([self myDefaultTransformationTypes] != nil &&
+            [[self myDefaultTransformationTypes] count]>index)
+        {
+            // get the node, return the label attribute
+            NSXMLElement *node = [[self myDefaultTransformationTypes] objectAtIndex:index];
+            NSString *display_label = [[node attributeForName:@"label"] stringValue];
+            return display_label;
+        }
+    }
+    
     
     return nil;
 }
@@ -320,21 +350,40 @@
 -(void)setup
 {
     
-    // ok, have we loaded the default output types?
-    if ([self myDefaultOutputTypes] == nil)
+    // ok, have we loaded the default language types?
+    if ([self myDefaultLanguageTypes] == nil)
     {
         // load the defaults -
-        NSString *path_to_outputs = [[NSBundle mainBundle] pathForResource:@"Outputs" ofType:@"xml"];
-        if (path_to_outputs!=nil)
+        NSString *path_to_languages = [[NSBundle mainBundle] pathForResource:@"Languages" ofType:@"xml"];
+        if (path_to_languages!=nil)
         {
             // load XML file and get output nodes -
-            NSXMLDocument *output_document = [VLCoreUtilitiesLib createXMLDocumentFromFile:[NSURL fileURLWithPath:path_to_outputs]];
+            NSXMLDocument *output_document = [VLCoreUtilitiesLib createXMLDocumentFromFile:[NSURL fileURLWithPath:path_to_languages]];
             
             // get the nodes -
-            NSArray *nodes_array = [output_document nodesForXPath:@"//output" error:nil];
+            NSArray *nodes_array = [output_document nodesForXPath:@"//language" error:nil];
             if (nodes_array!=nil)
             {
-                self.myDefaultOutputTypes = [NSArray arrayWithArray:nodes_array];
+                self.myDefaultLanguageTypes = [NSArray arrayWithArray:nodes_array];
+            }
+        }
+    }
+    
+    // ok, have we load the default transformation types?
+    if ([self myDefaultTransformationTypes] == nil)
+    {
+        // load the defaults -
+        NSString *path_to_transformations = [[NSBundle mainBundle] pathForResource:@"TransformationTypes" ofType:@"xml"];
+        if (path_to_transformations!=nil)
+        {
+            // load XML file and get output nodes -
+            NSXMLDocument *output_document = [VLCoreUtilitiesLib createXMLDocumentFromFile:[NSURL fileURLWithPath:path_to_transformations]];
+            
+            // get the nodes -
+            NSArray *nodes_array = [output_document nodesForXPath:@"//transform_type" error:nil];
+            if (nodes_array!=nil)
+            {
+                self.myDefaultTransformationTypes = [NSArray arrayWithArray:nodes_array];
             }
         }
     }
@@ -344,7 +393,8 @@
 {
     // kia my ivars -
     self.myBlueprintFileURL = nil;
-    self.myDefaultOutputTypes = nil;
+    self.myDefaultLanguageTypes = nil;
+    self.myDefaultTransformationTypes = nil;
     self.myGenerateCodeButton = nil;
     self.myCancelButton = nil;
     self.myOpenModelFileButton = nil;
